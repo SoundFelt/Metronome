@@ -149,7 +149,7 @@ input[type=number] {
 
 @media (max-width: 550px) {
     .slider{
-        left: 46.1%;
+        left: 45.9%;
         top: 10%;
         height: 240px;
     }
@@ -177,10 +177,10 @@ input[type=number] {
         font-size: 0.8rem;
     }
     .buttons {
-        width: 60px;
+        width: 50px;
         height: 0;
         padding-bottom: 22px;
-        left: 45.5%;
+        left: 48.5%;
         top: 66.3%;
         font-size: 0.8rem;
     }
