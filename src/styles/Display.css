@@ -21,13 +21,13 @@
     color: rgb(34, 34, 34) !important;
 }
 
-.css-19l5h75-MuiSlider-markLabel {
+.MuiSlider-markLabel {
     color: rgb(165, 165, 165) !important;
     margin-left: 10px;
     font-weight: bold !important;
 }
 
-.css-xxsb21-MuiSlider-markLabel {
+.MuiSlider-markLabel {
     color: rgb(165, 165, 165) !important;
     margin-left: 10px;   
     font-weight: bold !important;
@@ -121,10 +121,10 @@ input[type=number] {
         top: 9%;
         height: 480px;
     }
-    .css-19l5h75-MuiSlider-markLabel {
+    .MuiSlider-markLabel {
         margin-left: 20px ;
     }
-    .css-xxsb21-MuiSlider-markLabel {
+    .MuiSlider-markLabel {
         margin-left: 20px ;
     }
     .input-container {
@@ -156,11 +156,11 @@ input[type=number] {
     .MuiSlider-root  {    
         width: 5px !important;
     } 
-    .css-19l5h75-MuiSlider-markLabel {
+    .MuiSlider-markLabel {
         margin-left: 5px ;
         font-size: 0.7rem !important;
     }
-    .css-xxsb21-MuiSlider-markLabel {
+    .MuiSlider-markLabel {
         margin-left: 5px ;
         font-size: 0.7rem !important;
     }
