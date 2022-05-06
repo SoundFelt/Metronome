@@ -1,0 +1,187 @@
+.slider {
+    position: absolute;
+    left: 47%;
+    top: 9.6%;
+    height: 325px;
+}
+
+.MuiSlider-root  {
+    margin-right: 0 !important;
+    color: rgb(255, 255, 255) !important;
+    width: 8px !important;
+}
+
+.MuiSlider-track {
+    color: black !important;
+    border-color: transparent !important;
+    background-color: transparent !important; 
+}
+
+.MuiSlider-rail {
+    color: rgb(34, 34, 34) !important;
+}
+
+.css-19l5h75-MuiSlider-markLabel {
+    color: rgb(165, 165, 165) !important;
+    margin-left: 10px;
+    font-weight: bold !important;
+}
+
+.css-xxsb21-MuiSlider-markLabel {
+    color: rgb(165, 165, 165) !important;
+    margin-left: 10px;   
+    font-weight: bold !important;
+}
+
+.input-container {
+    position: absolute !important;
+    top: 66.4%;
+    left: 40.6%;
+    display: flex;
+}
+
+.bpm-input{
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    width: 90px;
+    height: 25px;
+    border: none;
+    font-size: 1.8rem;
+    padding-bottom: 8px;
+    margin-right: -10%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.281);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.bpm-input::placeholder {
+    font-size: 1rem;
+}
+  
+.start {
+    background-color: transparent;
+    border: 2px solid #00d7c3;
+    border-radius: 50px;
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+    color: #00d7c3;
+  }
+
+.start:hover {
+    box-shadow: 0 0 10px 0 #00d7c3 inset, 0 0 10px 2px #00d7c3;
+    border: 2px solid #00d7c3;
+}
+
+.stop {
+    background-color: transparent;
+    border: 2px solid #df841c;
+    border-radius: 50px;
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+    color: #df841c;
+  }
+
+.stop:hover {
+    box-shadow: 0 0 10px 0 #df841c inset, 0 0 10px 2px #df841c;
+    border: 2px solid #df841c;
+}
+
+.buttons {
+    position: absolute !important;
+    top: 73.2%;
+    left: 35.1%;
+    width: 80px;
+    padding: 5px 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+@media (min-width: 1400px) {
+    .slider{
+        left: 48.1%;
+        top: 9%;
+        height: 480px;
+    }
+    .css-19l5h75-MuiSlider-markLabel {
+        margin-left: 20px ;
+    }
+    .css-xxsb21-MuiSlider-markLabel {
+        margin-left: 20px ;
+    }
+    .input-container {
+        top: 66.4%;
+        left: 39.9%;
+    }
+    .bpm-input {
+        height: 40px;
+        width: 130px;
+        font-size: 2.5rem;
+    }
+    .buttons {
+        width: 100px;
+        height: 15px;
+        padding: 5px 0;
+        padding-bottom: 15px;
+        left: 37.5%;
+        top: 74%;
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .slider{
+        left: 46.1%;
+        top: 10%;
+        height: 240px;
+    }
+    .MuiSlider-root  {    
+        width: 5px !important;
+    } 
+    .css-19l5h75-MuiSlider-markLabel {
+        margin-left: 5px ;
+        font-size: 0.7rem !important;
+    }
+    .css-xxsb21-MuiSlider-markLabel {
+        margin-left: 5px ;
+        font-size: 0.7rem !important;
+    }
+    .input-container {
+        top: 66.4%;
+        left: 27%;
+    }
+    .bpm-input {
+        height: 21px;
+        width: 75px;
+        font-size: 1.3rem;
+    }
+    .bpm-input::placeholder {
+        font-size: 0.8rem;
+    }
+    .buttons {
+        width: 60px;
+        height: 0;
+        padding-bottom: 22px;
+        left: 45.5%;
+        top: 66.3%;
+        font-size: 0.8rem;
+    }
+}

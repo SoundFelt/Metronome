@@ -1,0 +1,56 @@
+.css-vqmohf-MuiButtonBase-root-MuiRadio-root.Mui-checked {
+    color: rgb(210, 210, 210) !important;
+}
+
+.MuiFormLabel-root.Mui-focused {
+    color: white !important;
+}
+
+.MuiFormControlLabel-root {
+    margin: 0px 5px !important;
+}
+
+.radio-control {
+    position: absolute !important;
+    top: 89.1%;
+    left: 27.5%;
+}
+
+.radio-label {
+    text-align: center !important;   
+    color: white !important;
+    font-family: 'Raleway', sans-serif !important;
+}
+
+.radio-label:focus {
+    color: white !important;
+}
+
+@media (min-width: 1400px) {
+    .radio-control {
+        left: 34.5%;
+        top: 90%;
+    }
+    .radio-label {
+        padding-bottom: 10px !important;
+    }
+}
+
+@media (max-width: 550px) {
+    .radio-control {
+        left: 25%;
+        top: 88.4%;
+    }
+    .radio-label {
+        padding-bottom: 0px !important;
+        font-size: 0.6rem !important;
+    }
+    .radio {
+        width: 10px !important;
+        font-size: 0.5rem !important;
+    }
+    .css-ae8bg-MuiFormControlLabel-root {
+        margin: 0px 15px !important;
+    }
+   
+}
