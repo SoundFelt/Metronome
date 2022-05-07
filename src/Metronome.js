@@ -44,7 +44,6 @@ function Metronome() {
         
         window.mainBeat = setInterval(() => {
           clearInterval(window.secondaryBeat)
-          
           sounds.primarySound.play()
           startSecondaryBeat()
         }, milliSeconds * signature + 5)
