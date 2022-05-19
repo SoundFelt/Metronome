@@ -103,6 +103,7 @@ function Metronome() {
         value < 240 && value > 40 ? setInputTempo(value) : setInputTempo(40)
         setInputTempo(value)
         if (value > 40 && value < 240) {
+        stopMetronome()
         const sliderValue = inputToSlider(value)
         setSliderTempo(sliderValue)
         }
