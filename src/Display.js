@@ -7,6 +7,7 @@ import Slider from '@mui/material/Slider';
 
 function Display(props) {
 
+  // clickInterval passed via props to JSS styles to set animation speed.
   const classes = useStyles(props)
 
   const inInputEnter = (e) => {

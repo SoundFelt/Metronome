@@ -13,6 +13,7 @@ function Metronome() {
       primarySound: new Audio(primarySound),
       secondarySound: new Audio(secondarySound)
     }
+    sounds.secondarySound.volume = 0.7
 
     const [inputTempo, setInputTempo] = useState(132)
     const [sliderTempo, setSliderTempo] = useState(-132)
@@ -20,7 +21,12 @@ function Metronome() {
     const [clickInterval, setClickInterval] = useState()
     const [signature, setSignature] = useState(4)
 
+    // intervalIDs saved to state, so they can be stopped in the stopMetronome function
+    const [mainIntervalID, setMainIntervalID] = useState()
+    const [secondaryIntervalID, setSecondaryIntervalID] = useState()
+
     const startMetronome = () => {
+      // if entered tempo/tapped tempo is lower than 40 or greater than 240, stop metronome and reset the tempo
       if (inputTempo < 40) {
         setInputTempo(40)
         stopMetronome()
@@ -40,38 +46,46 @@ function Metronome() {
 
     const clickSequence = (milliSeconds) => {
       setTimeout(() => {
+        // first main click happens outside the interval to ensure it's with animation
         sounds.primarySound.play()
         
-        window.mainBeat = setInterval(() => {
-          clearInterval(window.secondaryBeat)
+        // mainBeat interval will click at the start of each bar depending on signature (milliSeconds * signature)
+         const mainBeat = setInterval(() => {
           sounds.primarySound.play()
           startSecondaryBeat()
-        }, milliSeconds * signature + 5)
+        }, milliSeconds * signature)
+          setMainIntervalID(mainBeat)
 
+        // secondaryBeat function is called by mainBeat interval, starting the secondary clicks.
+        // Once x reaches the signature, the interval is stopped so that it doesn't click with mainBeat.
+        // mainBeat interval runs again and the cycle repeats.
         const startSecondaryBeat = () => {
-          let y = 0
-          window.secondaryBeat = setInterval(()=> {
-          if (++y === signature - 1) {
-          clearInterval(window.secondaryBeat) 
+          let x = 0
+          const secondaryBeat = setInterval(()=> {
+          if (++x === signature) {
+          clearInterval(secondaryBeat)
+          return
           }
-          sounds.secondarySound.volume = 0.7
           sounds.secondarySound.play()
-          }, milliSeconds + 5)
+          }, milliSeconds)
+          setSecondaryIntervalID(secondaryBeat)
         } 
         startSecondaryBeat()
+        // setTimeout to start the click sequence at the same time the animation runs
       }, milliSeconds * 2 / 4) 
     }
 
     const stopMetronome = () => {
       setRunning(false)
-      clearInterval(window.clickId)
-      clearInterval(window.mainBeat)
-      clearInterval(window.secondaryBeat)
+      clearInterval(mainIntervalID)
+      clearInterval(secondaryIntervalID)
       const sliderValue = inputToSlider(inputTempo)
       setSliderTempo(sliderValue)
     }
 
+    // Both sliderChange & inputToSlider sets the correct value for the stick(slider) and tempo input.
     const sliderChange = (e) => {
+        stopMetronome()
         setSliderTempo(e.target.value)
         const tempoRemovedMinus = e.target.value.toString().slice(1)
         setInputTempo(parseInt(tempoRemovedMinus))
@@ -84,20 +98,14 @@ function Metronome() {
         return tempoAddedMinus
     }
 
+    // Runs when new tempo entered into input
     const inputChange = (value) => {
         value < 240 && value > 40 ? setInputTempo(value) : setInputTempo(40)
         setInputTempo(value)
+        if (value > 40 && value < 240) {
         const sliderValue = inputToSlider(value)
-        if (running === false) {
-          if (sliderValue > -40) {
-            setSliderTempo(-40)
-          } 
-          else if (sliderValue < -240 ) {
-            setSliderTempo(-240)
-          } else {
-            setSliderTempo(sliderValue)
-          }
-        } 
+        setSliderTempo(sliderValue)
+        }
     }
 
   return (
