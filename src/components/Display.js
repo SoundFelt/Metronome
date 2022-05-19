@@ -1,7 +1,7 @@
 import React from 'react'
-import './styles/Display.css'
-import {useStyles} from './styles/Metronome'
-import {marks} from './extras/metronomeSpeeds'
+import '../styles/Display.css'
+import {useStyles} from '../styles/Metronome'
+import {marks} from '../extras/metronomeSpeeds'
 import Slider from '@mui/material/Slider';
 
 

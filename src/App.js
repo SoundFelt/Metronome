@@ -1,4 +1,4 @@
-import Metronome from './Metronome'
+import Metronome from './components/Metronome'
 
 function App() {
   return (

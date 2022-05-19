@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import './styles/TapTempo.css'
+import '../styles/TapTempo.css'
 
 function TapTempo(props) {
 

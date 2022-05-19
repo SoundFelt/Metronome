@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles/BeatsPerBar.css'
+import '../styles/BeatsPerBar.css'
 import RadioGroup from '@mui/material/RadioGroup';
 import FormLabel from '@mui/material/FormLabel';
 import Radio from '@mui/material/Radio';

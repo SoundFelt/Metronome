@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
-import './styles/Metronome.css'
-import metronome from './extras/metronome.png'
-import Display from './Display'
-import BeatsPerBar from './BeatsPerBar'
-import TapTempo from './TapTempo'
-import primarySound from './extras/metronomeSoundOne.1.wav'
-import secondarySound from './extras/metronomeSoundTwo.1.wav'
+import '../styles/Metronome.css'
+import metronome from '../extras/metronome.png'
+import Display from '../components/Display'
+import BeatsPerBar from '../components/BeatsPerBar'
+import TapTempo from '../components/TapTempo'
+import primarySound from '../extras/metronomeSoundOne.1.wav'
+import secondarySound from '../extras/metronomeSoundTwo.1.wav'
 
 function Metronome() {
      
